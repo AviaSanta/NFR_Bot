@@ -1,1 +1,1 @@
-Worker: node untitled-1.js
+Worker: node nfr.js
