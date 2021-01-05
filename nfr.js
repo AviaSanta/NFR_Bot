@@ -42,7 +42,7 @@ client.on("message", async msg => {
             const Id = foundId
             const newString = makeid() + makeid() + makeid() + makeid() + makeid()
             const foundUsername = new Discord.MessageEmbed()
-                .setColor("BLUE")
+                .setColor("YELLOW")
                 .setTitle("Prompt")
                 .setDescription("Hello **" + m.content + "**, to verify that you are that user. Please put this in your blurb, or status. \n `" + newString + "`\n\nSay **done** when complete.\nSay **cancel** to cancel. ")
                 .setFooter("Player ID is " + foundId)
@@ -54,7 +54,7 @@ client.on("message", async msg => {
             collector2.on('collect', async mag => {
                 if(mag.content.includes('done') & mag.content.includes("done") && mag.author.id == msg.author.id){
                     const fetchingBlurb = new Discord.MessageEmbed()
-                        .setColor("BLUE")
+                        .setColor("YELLOW")
                         .setTitle("Prompt")
                         .setDescription("Fetching your emojis, please wait as I am going to fetch it.")
                         .setFooter("Fetching..")
@@ -67,13 +67,13 @@ client.on("message", async msg => {
                                 if(status.includes(newString) || blurb.includes(newString)) {
                         
                                     const verified = new Discord.MessageEmbed()
-                                        .setColor("GREEN")
+                                        .setColor("ORANGE")
                                         .setTitle("Prompt")
-                                        .setDescription("You have now been verified! Please wait shortly as you are going to recieve the NFR Passengers role. Please have a read of #about and enjoy the server.")
+                                        .setDescription("You have now been verified! Please wait shortly as you are going to recieve the Verified Role. Please have a read of #information and enjoy the server.")
                                         .setFooter("Verifying..")
                                         .setTimestamp() 
                                     msg.channel.send(verified)
-                                    msg.member.roles.add(msg.guild.roles.cache.find(r => r.name == "NFR Passengers"))
+                                    msg.member.roles.add(msg.guild.roles.cache.find(r => r.name == "V | Verified","P | Passenger"))
                                     msg.member.setNickname(m.content)
                                 }else{
                                     msg.channel.send("Can not find the emojis.")
