@@ -4,7 +4,7 @@ const rbx = require("noblox.js");
 
 client.on("ready", () => {
     console.log("Bot online!");
-    client.user.setActivity("NFR.", { type: 'WATCHING' });
+    client.user.setActivity("Tigerair Entries.", { type: 'WATCHING' });
 });
 
 client.on("message", async msg => {
